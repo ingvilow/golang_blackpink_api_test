@@ -4,7 +4,7 @@
  I am going to use: 
  1) maybe clean arch pattern 
  2) postgreSQL
- 3) frontwend will be done on Flutter (may be, it will be cute small mobile app)
+ 3) frontend will be done on Flutter (may be, it will be cute small mobile app)
 
 
 i am from app mobile development field and I have never done anything related to backend. 
