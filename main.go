@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -28,6 +29,19 @@ func getBlackPinkSongs(context *gin.Context) {
 
 func main() {
 	router := gin.Default()
-	router.GET("/bpsongs", getBlackPinkSongs)
-	router.Run("")
+
+	router.Use(cors.New(cors.Config{
+		AllowOrigins: []string{"http://localhost:3000/"},
+		AllowMethods: []string{"POST", "PUT", "PATCH", "DELETE", "GET"},
+		AllowHeaders: []string{"Content-Type, access-control-allow-origin, access-control-allow-headers"},
+	}))
+	dataRoutes := router.Group("api/item")
+	{
+		dataRoutes.GET("/bpsongs", getBlackPinkSongs)
+		/* dataRoutes.POST("/", dataController.Insert)
+		   dataRoutes.GET("/:id", dataController.FindByID)
+		   dataRoutes.PUT("/:id", dataController.Update)
+		   dataRoutes.DELETE("/:id", dataController.Delete) */
+	}
+	router.Run()
 }
