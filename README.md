@@ -1,4 +1,4 @@
-# RestApi with almost all balckpink songs + photos. 
+# RestApi with almost Blackpink's member and other stuff. 
  i am planning nothing fancy at all, just some educational project for creating backend
  
  I am going to use: 
